@@ -1,0 +1,27 @@
+name = "minto-uno"
+type = "javascript"
+compatibility_date = "2024-01-01"
+
+# Build configuration for Next.js
+[build]
+command = "npm run build"
+cwd = "./"
+
+# Routes configuration
+[[routes]]
+pattern = "minto.uno/*"
+zone_name = "minto.uno"
+
+# Environment - Production
+[env.production]
+name = "minto-uno-prod"
+route = "minto.uno/*"
+zone_id = ""  # Add your zone ID here
+
+# Triggers for automatic deployments
+[triggers]
+crons = ["0 0 * * *"]
+
+# Analytics Engine binding (optional)
+[[analytics_engine_datasets]]
+binding = "ANALYTICS"
